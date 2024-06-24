@@ -1,12 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using HRManagement.Domain;
 using HRManagement.Domain.Common;
-using HRManagement.Domain.Contracts.Persistance;
 
-namespace HRManagement.Domain.Contracts.Persistance
+namespace HRManagement.Application.Contracts.Persistence
 {
     /* 
     
