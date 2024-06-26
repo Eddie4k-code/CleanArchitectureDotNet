@@ -17,9 +17,9 @@ namespace HRManagement.Application.Contracts.Persistence
 
         Task<T> DeleteAsync();
 
-        Task<T> GetAsync();
+        Task<List<T>> GetAsync();
 
-        Task<T> GetByIdAsync();
+        Task<T> GetByIdAsync(int Id);
     }
 }
 
