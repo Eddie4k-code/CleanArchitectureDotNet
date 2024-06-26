@@ -2,10 +2,10 @@
 
 <ItemGroup>
   <ProjectReference Include="../HRManagement.Domain/HRManagament.Domain.csproj" />
-  <ProjectReference Include="..\HRManagement.Domain\HRManagement.Domain.csproj" />
 </ItemGroup>
 
 <ItemGroup>
+  <PackageReference Include="AutoMapper" Version="13.0.1" />
   <PackageReference Include="MediatR" Version="12.3.0" />
 </ItemGroup>
 
