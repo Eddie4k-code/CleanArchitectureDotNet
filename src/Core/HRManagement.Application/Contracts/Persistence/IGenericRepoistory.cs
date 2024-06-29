@@ -9,7 +9,7 @@ namespace HRManagement.Application.Contracts.Persistence
     every new contract for a repository should implement this interface.
     
     */
-    public interface IGenericRepoistory<T> where T : BaseEntity
+    public interface IGenericRepoistory<T> where T : class
     {
         Task<T> CreateAsync(T entity);
 

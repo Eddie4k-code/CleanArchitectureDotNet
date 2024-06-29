@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using HRManagement.Application.Contracts.Persistence;
+using HRManagement.Application.Errors;
 using HRManagement.Application.Queries.LeaveType.GetLeaveTypeDetails;
 using HRManagement.Application.Queries.LeaveType.LeaveTypeDetails;
-using HRManagement.Domain;
 using MediatR;
 
 namespace HRManagement.Application.Queries
@@ -30,6 +30,11 @@ namespace HRManagement.Application.Queries
         {
             //query the database
             var leaveTypes = await this._leaveTypeRepository.GetByIdAsync(request.Id);
+
+
+            if (leaveTypes == null) {
+                throw new NotFoundError("LeaveType not found with that ID");
+            }  
 
             //convert data objects to dto objects
 
