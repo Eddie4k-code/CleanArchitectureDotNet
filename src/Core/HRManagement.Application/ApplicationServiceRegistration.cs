@@ -14,16 +14,15 @@ namespace HRManagement.Application
     Extend the IServiceCollection to create a method that allows us to add application services 
     returns services we want to add
     */
-    public static class ApplicationServiceRegistration
+public static class ApplicationServiceRegistration
+{
+    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
-        public static IServiceCollection AddApplicationServies(this IServiceCollection services) {
+        services.AddAutoMapper(Assembly.GetExecutingAssembly());
+        services.AddMediatR(Assembly.GetExecutingAssembly());
 
-            services.AddAutoMapper(Assembly.GetExecutingAssembly()); 
-            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-
-            return services;
-
-
-        }
+        return services;
     }
+}
+
 }

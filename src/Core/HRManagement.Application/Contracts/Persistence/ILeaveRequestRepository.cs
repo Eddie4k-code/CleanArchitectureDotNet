@@ -17,5 +17,11 @@ namespace HRManagement.Application.Contracts.Persistence
 
     public interface ILeaveRequestRepoistory : IGenericRepoistory<LeaveRequest> {
 
+        Task<LeaveRequest> GetLeaveRequestWithDetails(int id);
+
+        Task<List<LeaveRequest>> GetLeaveRequestsWithDetails();
+
+        Task<List<LeaveRequest>> GetLeaveRequestsWithDetails(string userId);
+
 }
 }

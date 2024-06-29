@@ -27,7 +27,8 @@ namespace HRManagement.Application.Commands.LeaveType
             var leaveTypeToCreate = this._mapper.Map<Domain.LeaveType>(request);
 
             //add to the database
-            var record = await this._leaveTypeRepository.CreateAsync(leaveTypeToCreate);
+            var record = this._leaveTypeRepository.CreateAsync(leaveTypeToCreate);
+
 
 
             //return record id

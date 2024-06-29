@@ -11,11 +11,11 @@ namespace HRManagement.Application.Contracts.Persistence
     */
     public interface IGenericRepoistory<T> where T : class
     {
-        Task<T> CreateAsync(T entity);
+        Task CreateAsync(T entity);
 
-        Task<T> UpdateAsync();
+        Task UpdateAsync(T entity);
 
-        Task<T> DeleteAsync();
+        Task DeleteAsync(T entity);
 
         Task<List<T>> GetAsync();
 

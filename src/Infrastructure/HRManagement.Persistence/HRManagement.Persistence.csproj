@@ -8,9 +8,11 @@
 
 
 <ItemGroup>
-  <ProjectReference Include="..\..\Core\HRManagement.Domain\HRManagement.Domain.csproj" />
   <ProjectReference Include="..\..\Core\HRManagement.Application\HRManagement.Application.csproj" />
+  <ProjectReference Include="..\..\Core\HRManagement.Domain\HRManagement.Domain.csproj" />
 </ItemGroup>
+
+
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
