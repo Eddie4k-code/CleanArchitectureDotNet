@@ -21,6 +21,7 @@ namespace HRManagement.Persistence.Repositories {
         public async Task CreateAsync(T entity)
         {
             await this._context.AddAsync(entity);
+            await this._context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(T entity)

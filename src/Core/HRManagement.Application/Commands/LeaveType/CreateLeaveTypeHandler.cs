@@ -4,10 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using HRManagement.Application.Contracts.Persistence;
+using MediatR;
 
 namespace HRManagement.Application.Commands.LeaveType
 {
-    public class CreateLeaveTypeHandler
+    public class CreateLeaveTypeHandler : IRequestHandler<CreateLeaveTypeCommand, int>
     {
         private readonly IMapper _mapper;
         private readonly ILeaveTypeRepository _leaveTypeRepository;
