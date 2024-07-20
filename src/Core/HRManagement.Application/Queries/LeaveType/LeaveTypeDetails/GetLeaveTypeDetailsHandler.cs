@@ -18,15 +18,14 @@ namespace HRManagement.Application.Queries
         private readonly IMapper _mapper;
         private readonly ILeaveTypeRepository _leaveTypeRepository;
 
-        private readonly IAppLogger<string> _logger;
 
 
-        public GetLeaveTypeDetailsHandler(IMapper mapper, ILeaveTypeRepository leaveTypeRepository, IAppLogger<string> logger)
+        public GetLeaveTypeDetailsHandler(IMapper mapper, ILeaveTypeRepository leaveTypeRepository)
         {
 
             this._mapper = mapper;
             this._leaveTypeRepository = leaveTypeRepository;
-            this._logger = logger;
+           
             
         }
 
@@ -40,7 +39,7 @@ namespace HRManagement.Application.Queries
                 throw new NotFoundError("LeaveType not found with that ID");
             }  
 
-            this._logger.LogInformation("Leave Type found by ID");
+           
 
             //convert data objects to dto objects
 

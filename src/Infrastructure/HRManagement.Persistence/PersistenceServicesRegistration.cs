@@ -16,6 +16,7 @@ namespace HRManagement.Persistence
     {
         public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration) {
             
+
             services.AddDbContext<HRDatabaseContext>(options => {
                 options.UseSqlServer(configuration.GetConnectionString("HRDatabaseConnectionString"));
             });
@@ -23,7 +24,7 @@ namespace HRManagement.Persistence
             //dependency injection
             services.AddScoped(typeof(IGenericRepoistory<>), typeof(GenericRepository<>));
             services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
-            services.AddScoped<ILeaveRequestRepoistory, ILeaveRequestRepoistory>();
+            services.AddScoped<ILeaveRequestRepoistory, LeaveRequestRepository>();
             services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();
 
             return services;

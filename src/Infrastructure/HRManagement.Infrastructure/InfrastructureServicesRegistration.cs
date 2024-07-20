@@ -13,7 +13,7 @@ public static class InfrastructureServicesRegistration {
 
         //dependency injection
         services.AddScoped<IEmailSender, EmailSender>();
-        services.AddScoped(typeof(ILogger<>), typeof(Logger<>));
+        services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));
 
 
         return services;
